@@ -1,4 +1,4 @@
-from sqlmodel import SQLModel, Session, create_engine
+from sqlmodel import Session, SQLModel, create_engine
 
 DATABASE_URL = "sqlite:///data/monitor.db"
 
@@ -8,4 +8,4 @@ def create_db():
     SQLModel.metadata.create_all(engine)
 
 def get_session():
-    return Session(engine)
+    return Session(engine, expire_on_commit=False)

@@ -1,12 +1,15 @@
 from sqlmodel import Session, select
 from core.models import Event
 
-def save(session: Session, event: Event) -> Event:
+def save_if_new(session: Session, event: Event) -> bool:
+    if exists(session, event):
+        return False
+
     session.add(event)
     session.commit()
     session.refresh(event)
 
-    return event
+    return True
 
 def exists(session: Session, event: Event) -> bool:
         statement = select(Event).where(
