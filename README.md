@@ -41,11 +41,11 @@ monitor-eventos/
 
 ## Roadmap
 
-* [ ] Estrutura inicial do projeto
-* [ ] Primeiro scraper do IFS
-* [ ] Persistência em SQLite
-* [ ] Detecção de novos eventos
-* [ ] Notificações por e-mail
+* [x] Estrutura inicial do projeto
+* [x] Primeiro scraper do IFS
+* [x] Persistência em SQLite
+* [x] Detecção de novos eventos
+* [x] Notificações por e-mail
 * [ ] Suporte ao portal da UFS
 
 ## Motivação
