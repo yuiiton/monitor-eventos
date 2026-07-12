@@ -1,5 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
+from core.models import Event
 
 BASE_URL = "https://suap.ifs.edu.br"
 EVENTS_URL = f"{BASE_URL}/eventos/inscricao/"
@@ -10,7 +11,7 @@ def get_event_id(link: str) -> str:
     return link.rstrip("/").split("/")[-1]
 
 
-def get_events() -> list[dict]:
+def get_events() -> list[Event]:
     """Obtém todos os eventos do portal do IFS."""
 
     response = requests.get(EVENTS_URL)
@@ -27,13 +28,14 @@ def get_events() -> list[dict]:
 
         extra = event.find("div", class_="extra-info")
 
-        events.append({
-            "id": get_event_id(link),
-            "title": event.find("h4", class_="title").text.strip(),
-            "description": extra.text.strip() if extra else "Sem descrição",
-            "registration_period": event.find("dd").text.strip(),
-            "link": link,
-        })
+        events.append(Event(
+            source="IFS",
+            external_id=get_event_id(link),
+            title=event.find("h4", class_="title").text.strip(),
+            description=extra.text.strip() if extra else "Sem descrição",
+            registration_period=event.find("dd").text.strip(),
+            link=link,
+        ))
 
     return events
 
