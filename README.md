@@ -46,9 +46,7 @@ monitor-eventos/
 * [ ] Persistência em SQLite
 * [ ] Detecção de novos eventos
 * [ ] Notificações por e-mail
-* [ ] Interface de linha de comando (CLI)
 * [ ] Suporte ao portal da UFS
-* [ ] Agendamento automático das verificações
 
 ## Motivação
 
