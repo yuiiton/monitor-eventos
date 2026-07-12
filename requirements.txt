@@ -1,9 +1,16 @@
+annotated-types==0.7.0
 beautifulsoup4==4.15.0
 bs4==0.0.2
 certifi==2026.6.17
 charset-normalizer==3.4.9
+greenlet==3.5.3
 idna==3.18
+pydantic==2.13.4
+pydantic_core==2.46.4
 requests==2.34.2
 soupsieve==2.8.4
+SQLAlchemy==2.0.51
+sqlmodel==0.0.39
+typing-inspection==0.4.2
 typing_extensions==4.16.0
 urllib3==2.7.0
