@@ -12,6 +12,21 @@ O objetivo do projeto é evitar a necessidade de acessar manualmente diferentes 
 * Notificações por e-mail.
 * Arquitetura preparada para adicionar novas fontes de eventos.
 
+## Exemplo
+
+Imagem do ```main.py``` rodando no terminal
+
+![Código sendo executado no terminal](docs/images/terminal.png)
+
+Ao detectar um novo evento no portal do IFS, o Monitor Eventos envia automaticamente uma notificação por e-mail contendo:
+
+- título;
+- descrição;
+- período de inscrição;
+- link direto para o evento.
+
+![Email de exemplo](docs/images/email.png)
+
 ## Fontes suportadas
 
 | Instituição                           | Status               |
