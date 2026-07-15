@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 from core.models import Event
+from core.configs import HEADERS
 
 BASE_URL = "https://suap.ifs.edu.br"
 EVENTS_URL = f"{BASE_URL}/eventos/inscricao/"
@@ -14,7 +15,11 @@ def get_event_id(link: str) -> str:
 def get_events() -> list[Event]:
     """Obtém todos os eventos do portal do IFS."""
 
-    response = requests.get(EVENTS_URL)
+    response = requests.get(
+    EVENTS_URL,
+    headers=HEADERS,
+    timeout=10,
+)
     response.raise_for_status()
 
     soup = BeautifulSoup(response.text, "html.parser")
